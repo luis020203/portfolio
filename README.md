@@ -8,9 +8,7 @@
 <br>
 
 - git clone https://github.com/luis020203/portfolio.git
-- cd portfolio
-- pip install -r requirements.txt
-- python manage.py runserver
+
 
 
 
