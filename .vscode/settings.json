@@ -3,5 +3,6 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "none",
-    "oneDarkPro.vivid": true
+    "oneDarkPro.vivid": true,
+    "oneDarkPro.italic": true
 }

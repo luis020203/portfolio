@@ -8,9 +8,11 @@
 <body>
     <h1>My Blog</h1> 
     {% for blog in post %}
-        <h2>{{blog.title}}</2>
-        <p>{{blog.description}}</p>k
+        <h2>{{blog.title}}</h2>
+        <h3>{{blog.date|date:'M d Y'|upper}}</h3>
+        <p>{{blog.description|striptags|truncatechars:100}}</p>
         <img src="{{blog.image.url}}" alt= '{{blog.title}}'>
+        <a href="{% url 'blogs:publics' blog.id%}">{{blog.title}}</a>
     {% endfor %}
 </body>
 </html>
