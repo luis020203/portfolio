@@ -9,6 +9,9 @@
 
 - git clone https://github.com/luis020203/portfolio.git
 
+- crear la carpeta static en my_portfolio
+
+- crear una subcarpeta dentro de static
 
 
 

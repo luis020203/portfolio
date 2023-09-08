@@ -6,14 +6,21 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <h1>Welcome</h1> 
-    {% for projects in myprojects %}
-        <h2>{{projects.title}}</h2>
-        <h3>{{projects.description}}</h3>
-        <img src="{{projects.image.url}}" alt="">
-        {% if projects.url %}
-            <a href="{{projects.url}}">{{projects.url}}</a>
-        {% endif %}
-    {% endfor %}
+
+    {% extends 'layout.html' %}
+
+    {% block content %}
+        <h1>Welcome</h1> 
+        {% for projects in myprojects %}
+            <h2>{{projects.title}}</h2>
+            <h3>{{projects.description}}</h3>
+            <img src="{{projects.image.url}}" alt="">
+            {% if projects.url %}
+                <a href="{{projects.url}}">{{projects.url}}</a>
+            {% endif %}
+        {% endfor %}
+        
+    {% endblock %}
+
 </body>
 </html>
