@@ -1,26 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
 
     {% extends 'layout.html' %}
 
     {% block content %}
-        <h1>Welcome</h1> 
-        {% for projects in myprojects %}
-            <h2>{{projects.title}}</h2>
-            <h3>{{projects.description}}</h3>
-            <img src="{{projects.image.url}}" alt="">
-            {% if projects.url %}
-                <a href="{{projects.url}}">{{projects.url}}</a>
-            {% endif %}
-        {% endfor %}
-        
-    {% endblock %}
 
-</body>
-</html>
+    {% load static %}
+
+        <header class="row bg-red">
+            <div class="col-md-4">
+                <img src="{% static 'portfolio/hero.png' %}" alt="">
+            </div>
+            <div class="col-md-8 my-auto">
+                <h1><strong>Luis Veintimilla</strong></h1>
+                <h3>Soy Desarrollador Web</h3>
+                <p>
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum optio, 
+                   aliquam id iusto nemo ratione voluptatem cupiditate eius non, sint, cumque maxime! 
+                   Est ullam quis quae amet adipisci libero nihil.
+                </p>
+                <a href="{% static 'portfolio/HV.pdf' %}" class="btn btn-primary btn-lg rounder-0 my-3" target="_blank">CV</a>
+            </div>
+        </header>
+        <div class="row my-4 text-center">
+            <h3>Proyectos</h3>
+            <P>Proyectos personales que he realizado</P>
+            {% for projects in myprojects %}
+
+            <div class="col-md-4 p-4">
+                <div class="card bg-black card-project">
+                    <img src="{{projects.image.url}}" class="card-img-top">
+                    <div class="card-body">
+                            <h3>{{projects.description}}</h3>
+                            {% if projects.url %}
+                                <a href="{{projects.url}}" class="btn btn-light rounded-2 btn-sm fluid" target="_blank">{{projects.url}}</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="text-center">
+            <h3>Tecnologías</h3>
+        </div>
+        <div class="container">
+            <div class="box one">
+              <h3>REACT</h3>
+            </div>
+            <div class="box two">
+              <h3>JS</h3>
+            </div>
+            <div class="box three">
+              <h3>PYTHON</h3>
+            </div>
+            <div class="box four">
+              <h3>PHP</h3>
+            </div>
+            <div class="box five">
+              <h3>MYSQL</h3>
+            </div>
+            <div class="box six">
+                <h3>GIT</h3>
+              </div>
+          </div>
+           
+    {% endblock %}
